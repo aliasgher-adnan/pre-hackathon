@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecommerce Responsive full website</title>
+    <!-- CSS-link -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+</head>
+
+<body>
+
+    <header>
+
+
+        <ul class="navmenu">
+            <li class="logo"><img src="./image/dnk-86520214.jpg"></li>
+            <li><a href="#EVERYTHING">EVERYTHING</a></li>
+            <li><a href="#WOMEN">WOMEN</a></li>
+            <li><a href="#MEN">MEN</a></li>
+            <li><a href="#Accessories">Accessories</a></li>
+        </ul>
+
+        <div class="nav-icon">
+            <a href="#"><i class='bx bx-search'></i></a>
+            <a href="form.html"><i class='bx bx-user'></i></a>
+            <div class="cart-container" id="cartContainer">
+                <div class="cart-content">
+                  <h3>Cart Items:</h3>
+                  <ul class="cart-items" id="cartItems">
+                  </ul>
+                  <div class="total">
+                    <label>Total:</label>
+                    <span id="totalAmount">$0.00</span>
+                  </div>
+                  <a href="#" class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</a>
+                </div>
+              </div>
+            
+              <div class="cart-toggle" onclick="toggleCart()">
+                &#9776;
+              </div>
+            
+
+
+        </div>
+    </header>
+
+    <section class="main-home">
+        <div class="main-text">
+            <h5> Fashion Collection</h5>
+            <h1>Raining Offers For<br>Hot Summer!</h1>
+            <p>25% off on all products</p>
+
+            <a href="#" class="main-btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
+            <a href="#" class="main-btn">Find More <i class='bx bx-right-arrow-alt'></i></a>
+        </div>
+
+        <div class="down-arrow">
+            <a href="#trending" class="down"><i class='bx bx-down-arrow-alt'></i></a>
+        </div>
+    </section>
+    <div class="logo2">
+        <img src="image/download.png" height="100px" width="200px"> <img src="image/download (1).png" height="100px"
+            width="200px"> <img src="image/images (1).png" height="100px" width="200px"> <img src="image/images (2).png"
+            height="100px" width="200px"> <img src="image/images.png" height="100px" width="200px">
+    </div>
+    <div>
+        <div class="gridCol container">
+            <div><img src="./image/101.jpg" alt="">
+                <h3 class="img-1">Get 20% off on Latest Collection<br>Lorem ipsum, dolor sit ametbr<br> consectetur
+                    adipisicing elit.</h3>
+                <a href="#" class="main-btn img-btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+            <div><img src="./image/102.jpg" alt="">
+                <h3 class="img-1"> Check out amazing offers in <br>our new stock
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit.</h3>
+                <a href="#" class="main-btn img-btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a>
+            </div>
+            <div><img src="./image/103.jpg" alt="">
+            <h3 class="img-1">check out latest collection <br>Lorem ipsum dolor sit amet<br> consectetur adipisicing elit.</h3>
+            <a href="#" class="main-btn img-btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a></div>
+        </div>
+
+        <h2 class="pro">Featured products<span></span></h2>
+    </div>
+
+    <div class="products">
+        <div class="row">
+            <img src="image/sskhaddi.jpg" alt="">
+            <div class="product-text">
+
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+            </div>
+            <div class="ratting">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+
+            <div class="price">
+                <h4>khaddi</h4>
+                <p>$99 - $129</p>
+                <Div>
+                    <button onclick="addToCart('Product 1', parseInt(document.getElementById('product1').value))">Add to Cart</button></Div>
+            </div>
+        </div>
+
+        <div class="row">
+            <img src="image/Mens-Collection.webp" alt="">
+            <div class="product-text">
+
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+            </div>
+            <div class="ratting">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+
+            <div class="price">
+                <h4>Bonanza Satrangi</h4>
+                <p>$99 - $129</p>
+                <Div>
+                    <button onclick="addToCart('Product 1', parseInt(document.getElementById('product1').value))">Add to Cart</button></Div>
+            </div>
+        </div>
+
+        <div class="row">
+            <img src="image/Gul-Ahmed-Summer-Dresses-2016-For-Men010-770x430.jpg" alt="">
+
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+            </div>
+            <div class="ratting">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+
+            <div class="price">
+                <h4>Gul Ahmed</h4>
+                <p>$99 - $129</p>
+                <Div>
+                    <button onclick="addToCart('Product 1', parseInt(document.getElementById('product1').value))">Add to Cart</button></Div>
+            </div>
+        </div>
+
+        <div class="row">
+            <img src="image/j.jpg" alt="">
+            <div class="product-text">
+
+            </div>
+            <div class="heart-icon">
+                <i class='bx bxs-heart'></i>
+            </div>
+            <div class="ratting">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+
+            <div class="price">
+                <h4>Junaid Jamshed</h4>
+                <p>$99 - $129</p>
+                <Div>
+                    <button onclick="addToCart('Product 1', parseInt(document.getElementById('product1').value))">Add to Cart</button></Div>
+            </div>
+        </div>
+
+        <div class="row">
+            <img src="image/Sapphire (1).jpg" alt="">
+
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+            </div>
+            <div class="ratting">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+
+            <div class="price">
+                <h4>Sapphire</h4>
+                <p>$99 - $129</p>
+                <Div>
+                    <button onclick="addToCart('Product 1', parseInt(document.getElementById('product1').value))">Add to Cart</button></Div>
+            </div>
+        </div>
+
+        <div class="row">
+            <img src="image/outfitter.jpg" alt="">
+            <div class="product-text">
+
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+            </div>
+            <div class="ratting">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+
+            <div class="price">
+                <h4>Outfitters</p>
+                    <p>$99 - $129</p>
+                    <Div>
+                        <button onclick="addToCart('Product 1', parseInt(document.getElementById('product1').value))">Add to Cart</button></Div>
+            </div>
+        </div>
+
+        <div class="row">
+            <img src="image/ak.jpg" alt="">
+            <div class="product-text">
+
+            </div>
+            <div class="heart-icon">
+                <i class='bx bx-heart'></i>
+            </div>
+            <div class="ratting">
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bx-star'></i>
+                <i class='bx bxs-star'></i>
+                <i class='bx bxs-star'></i>
+            </div>
+
+            <div class="price">
+                <h4>Alkaram Studio</h4>
+                <p>$99 - $129</p>
+                <Div>
+                    <button onclick="addToCart('Product 1', parseInt(document.getElementById('product1').value))">Add to Cart</button></Div>
+            </div>
+        </div>
+
+
+    </div>
+    </div>
+
+    </section>
+    <section class="offer">
+
+        <div>
+            <img class="img-offer" src="image/pexels-andrea-piacquadio-974911-removebg-preview.png" height="330px"
+                width="500px">
+            <h5> Limited Time Offer</h5><br>
+            <h1>Special Eddition</h1><br>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. <br> Nisi minima ipsam sit enim modi
+                voluptatibus!</p><br>
+            <h3>Buy This T-Shirt At 20% Discount, Use Code OFF20</h3><br>
+
+            <div> <a href="#" class="main-btn img-btn">Shop Now <i class='bx bx-right-arrow-alt'></i></a></div>
+
+        </div>
+    </section>
+
+
+
+
+    <!-- contact-section -->
+    <section class="contact">
+        <div class="contact-info">
+            <div class="first-info">
+                <p><br>Karachi,pakistan</p>
+
+                <p>techproduts@gmail.com</p>
+
+                <div class="social-icon">
+                    <a href="#"><i class='bx bxl-facebook'></i></a>
+                    <a href="#"><i class='bx bxl-twitter'></i></a>
+                    <a href="#"><i class='bx bxl-instagram'></i></a>
+                    <a href="#"><i class='bx bxl-youtube'></i></a>
+                    <a href="#"><i class='bx bxl-linkedin'></i></a>
+                </div>
+            </div>
+
+            <div class="second-info">
+                <h4>Support</h4>
+                <p>Contact us</p>
+                <p>About page</p>
+                <p>Size Guide</p>
+                <p>Shopping & Resturns</p>
+                <p>Privacy</p>
+            </div>
+
+            <div class="third-info">
+                <h4>Shop</h4>
+                <p>Men's Shopping</p>
+                <p>Women's Shopping</p>
+                <p>Kids's Shopping</p>
+                <p>Furniture</p>
+                <p>All Type Of Accessories</p>
+                <p>Discount</p>
+            </div>
+
+            <div class="fourth-info">
+                <h4>Company</h4>
+                <p>About</p>
+                <p>Blog</p>
+                <p>Affiliate</p>
+                <p>Login</p>
+            </div>
+    </section>
+
+
+
+
+
+
+
+
+    <script src="java.js"></script>
+
+</body>
+
+</html>
