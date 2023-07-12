@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Off-Canvas Cart</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .product {
+      margin-bottom: 10px;
+    }
+    
+    .product input[type="number"] {
+      width: 50px;
+    }
+    
+    .cart-container {
+      position: fixed;
+      top: 0;
+      right: -300px;
+      width: 300px;
+      height: 100vh;
+      background-color: #fff;
+      transition: right 0.3s ease;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      z-index: 999;
+    }
+    
+    .cart-open {
+      right: 0;
+    }
+    
+    .cart-toggle {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 999;
+    }
+    
+    .cart-content {
+      padding: 20px;
+    }
+    
+    .cart-items {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .total {
+      text-align: right;
+      margin-top: 20px;
+    }
+    
+    .total label {
+      font-weight: bold;
+    }
+    
+    .total span {
+      margin-left: 10px;
+    }
+    
+    .checkout-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 20px;
+      text-align: center;
+      text-decoration: none;
+    }
+    
+    .checkout-btn:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="cart-container" id="cartContainer">
+    <div class="cart-content">
+      <h3>Cart Items:</h3>
+      <ul class="cart-items" id="cartItems">
+      </ul>
+      <div class="total">
+        <label>Total:</label>
+        <span id="totalAmount">$0.00</span>
+      </div>
+      <a href="#" class="checkout-btn" onclick="proceedToCheckout()">Proceed to Checkout</a>
+    </div>
+  </div>
+
+  <div class="cart-toggle" onclick="toggleCart()">
+    &#9776;
+  </div>
+
+  <script>
+    var cart = [];
+    var cartContainer = document.getElementById('cartContainer');
+
+    function addToCart(productName, quantity) {
+      // Check if the product is already in the cart
+      for (var i = 0; i < cart.length; i++) {
+        if (cart[i].productName === productName) {
+          cart[i].quantity += quantity;
+          showCart();
+          return;
+        }
+      }
+
+      // Add the product to the cart
+      cart.push({ productName: productName, quantity: quantity });
+      showCart();
+    }
+
+    function showCart() {
+      var cartItems = document.getElementById('cartItems');
+      cartItems.innerHTML = '';
+
+      var totalAmount = 0;
+
+      for (var i = 0; i < cart.length; i++) {
+        var cartItem = document.createElement('li');
+        cartItem.classList.add('cart-item');
+        cartItem.innerHTML = '<span>' + cart[i].productName + '</span><span>' + cart[i].quantity + '</span>';
+        cartItems.appendChild(cartItem);
+
+        totalAmount += cart[i].quantity;
+      }
+
+      document.getElementById('totalAmount').textContent = '$' + totalAmount.toFixed(2);
+    }
+
+    function toggleCart() {
+      cartContainer.classList.toggle('cart-open');
+    }
+
+    function proceedToCheckout() {
+      // Perform any additional operations or navigate to the checkout page
+      console.log('Proceed to Checkout');
+    }
+  </script>
+</body>
+</html>
